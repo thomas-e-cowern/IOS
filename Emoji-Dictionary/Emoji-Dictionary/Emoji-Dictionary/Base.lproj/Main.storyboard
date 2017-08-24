@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pmo-1U-6Q4">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Emoji Dictionary-->
+        <scene sceneID="VI6-kW-Oiu">
+            <objects>
+                <tableViewController id="Grt-dH-rHP" customClass="EmojiTVC" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="91W-0o-DSU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="emojiCell" id="JWb-dV-wzy">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JWb-dV-wzy" id="bIz-jt-95k">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Grt-dH-rHP" id="TxC-Ww-s65"/>
+                            <outlet property="delegate" destination="Grt-dH-rHP" id="cyf-Wb-qIH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Emoji Dictionary" id="wIt-jp-QWM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Z87-v5-2po"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="539-2h-DQA" kind="show" identifier="emojiSegue" id="T8f-dE-xnL"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ND1-Ch-2LI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188.75" y="62.323943661971832"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="pZG-lR-WbI">
+            <objects>
+                <viewController id="539-2h-DQA" customClass="DetailVC" customModule="Emoji_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6hS-p6-5eq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kT3-th-ld4">
+                                <rect key="frame" x="51" y="84" width="218" height="239"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ghost with Tongue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HJ-b9-jQV">
+                                <rect key="frame" x="10" y="537" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birth Year: 2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNo-jD-xX0">
+                                <rect key="frame" x="99.5" y="486" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category: Transportation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEe-mB-BzD">
+                                <rect key="frame" x="64.5" y="435" width="191.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5HJ-b9-jQV" firstAttribute="leading" secondItem="G39-3D-XNH" secondAttribute="leading" constant="10" id="0cy-Ft-ULX"/>
+                            <constraint firstItem="G39-3D-XNH" firstAttribute="bottom" secondItem="5HJ-b9-jQV" secondAttribute="bottom" constant="10" id="4be-nP-djC"/>
+                            <constraint firstItem="YNo-jD-xX0" firstAttribute="top" secondItem="cEe-mB-BzD" secondAttribute="bottom" constant="30" id="C4T-2N-VMz"/>
+                            <constraint firstItem="G39-3D-XNH" firstAttribute="trailing" secondItem="5HJ-b9-jQV" secondAttribute="trailing" constant="10" id="LI1-Ar-eRW"/>
+                            <constraint firstItem="YNo-jD-xX0" firstAttribute="centerX" secondItem="6hS-p6-5eq" secondAttribute="centerX" id="Lwk-Sw-0gd"/>
+                            <constraint firstItem="cEe-mB-BzD" firstAttribute="centerX" secondItem="6hS-p6-5eq" secondAttribute="centerX" id="SFN-Wv-ycv"/>
+                            <constraint firstItem="kT3-th-ld4" firstAttribute="centerX" secondItem="6hS-p6-5eq" secondAttribute="centerX" id="eeg-V2-Ad0"/>
+                            <constraint firstItem="kT3-th-ld4" firstAttribute="top" secondItem="G39-3D-XNH" secondAttribute="top" constant="20" id="l6C-uM-wJd"/>
+                            <constraint firstItem="5HJ-b9-jQV" firstAttribute="top" secondItem="YNo-jD-xX0" secondAttribute="bottom" constant="30" id="xqX-Or-D5K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G39-3D-XNH"/>
+                    </view>
+                    <connections>
+                        <outlet property="birthLabel" destination="YNo-jD-xX0" id="ueI-TV-RHc"/>
+                        <outlet property="categoryLabel" destination="cEe-mB-BzD" id="9Jk-fP-m9z"/>
+                        <outlet property="emojiDefLabel" destination="5HJ-b9-jQV" id="5sd-Xv-PaJ"/>
+                        <outlet property="emojiLabel" destination="kT3-th-ld4" id="XRR-jk-dnV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pjw-Ia-5qx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2058.75" y="61.267605633802816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a5f-e9-6zP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pmo-1U-6Q4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MNK-9g-dNc">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Grt-dH-rHP" kind="relationship" relationship="rootViewController" id="HK7-O9-rkz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyC-im-fp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="61"/>
+        </scene>
+    </scenes>
+</document>
