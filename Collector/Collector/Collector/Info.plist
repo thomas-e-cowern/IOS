@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Collector needs to access to your photos to add to the app</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Collecotr need access to your camera</string>
 </dict>
 </plist>
