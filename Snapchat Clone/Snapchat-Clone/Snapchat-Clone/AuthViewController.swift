@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import FirebaseDatabase
 
 class AuthViewController: UIViewController {
     
@@ -33,14 +34,25 @@ class AuthViewController: UIViewController {
             if let password = passwordTextField.text {
                 if loginMode {
                     //login
-                    
+                    Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                        if let error = error {
+                            print(error)
+                        } else {
+                            print("Login Successful")
+                            self.performSegue(withIdentifier: "authToSnaps", sender: nil)
+                        }
+                    })
                 } else {
                     //sign up
                     Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                         if let error = error {
                             print(error)
                         } else {
+                            Database.database().reference().child("users").child((user?.uid)!).child("email").setValue(email)
+                            
                             print("Sign Up Successful")
+                            
+                            self.performSegue(withIdentifier: "authToSnaps", sender: nil)
                         }
                     })
                 }
