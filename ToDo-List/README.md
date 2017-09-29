@@ -4,7 +4,7 @@ A small iOS application allowing users to track their todo items
 
 ## Technologies Used
 
-iOS 10 and Swift 3
+iOS 11 and Swift 4
 
 ## Contributors
 
