@@ -12,6 +12,7 @@ Thomas E Cowern based on a project by Nick Walter
 
 ## Structure
 
-1.  Main page listing current todo items in core data
-2.  Add todo page for adding new todo item
-3.  Completed page for completing todo items which are then deleted from core data
+1.  Main page listing current snaps
+2.  Add image page to take a new snap
+3.  Email list page to select whom to send new snap
+4.  View page to view snaps recieved from friends.  Upon returning the snaps are deleted.
