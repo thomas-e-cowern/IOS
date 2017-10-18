@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13196" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ArialHB.ttc">
+            <string>ArialHebrew-Bold</string>
+        </array>
+        <array key="Courier.ttc">
+            <string>Courier-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Time_Tracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label alignment="left" hidden="YES" text="Today: 13 hr 44 min" id="gBv-lz-m8o">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
+                        <label alignment="left" text="Today: 13 hr 44 min" id="u8U-SO-8VN">
+                            <fontDescription key="font" name="ArialHebrew-Bold" family="Arial Hebrew" pointSize="14"/>
+                        </label>
+                        <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="Nzs-tr-dtG">
+                            <string key="text">Today
+13 hr 44 min</string>
+                            <fontDescription key="font" name="Courier-Bold" family="Courier" pointSize="20"/>
+                        </label>
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Clock In" id="6XZ-XW-NAi">
+                            <connections>
+                                <action selector="clockInOutTapped" destination="AgC-eL-Hgc" id="4mz-6X-xtB"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="X6q-1h-i0X">
+                        <items>
+                            <menuItem title="History" icon="info" id="PFL-6o-Zev">
+                                <connections>
+                                    <action selector="historyPressed" destination="AgC-eL-Hgc" id="QCi-33-uRR"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Reset All" icon="trash" id="92U-pT-BOC">
+                                <connections>
+                                    <action selector="resetAllTapped" destination="AgC-eL-Hgc" id="8t5-Z1-aeT"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="button" destination="6XZ-XW-NAi" id="hgX-vv-aU6"/>
+                        <outlet property="middleLabel" destination="Nzs-tr-dtG" id="y6k-GB-XNO"/>
+                        <outlet property="topLabel" destination="u8U-SO-8VN" id="hnK-fY-93u"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+        <!--timeTableController-->
+        <scene sceneID="8I3-Gq-cIN">
+            <objects>
+                <controller identifier="timeTableController" title="timeTableController" id="oQ1-od-1Yr" customClass="TimeTableIC" customModule="Time_Tracker_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="l9m-aq-nYW">
+                            <items>
+                                <tableRow identifier="clockInOutRow" id="ctq-cD-gLF" customClass="ClockInOutRowController" customModule="Time_Tracker_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Og6-nT-xdd">
+                                        <items>
+                                            <label width="1" height="1" alignment="left" verticalAlignment="center" text="Label" id="Hfg-YA-Thq">
+                                                <fontDescription key="font" type="system" pointSize="22"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="Hfg-YA-Thq" id="DPL-0Z-qXk"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="l9m-aq-nYW" id="vIm-fc-BWT"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="361" y="173"/>
+        </scene>
+        <!--TimeDetail-->
+        <scene sceneID="2Sx-zM-qDi">
+            <objects>
+                <controller identifier="TimeDetail" id="dcY-UL-J90" customClass="DetailIC" customModule="Time_Tracker_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Clock-In" id="1fD-92-sjg"/>
+                        <label alignment="left" text="Date" id="Tl0-Gd-QPc"/>
+                        <label alignment="left" text="Clock-Out" id="1Px-u2-Q9W"/>
+                        <label alignment="left" text="Date" id="N0T-wS-MWX"/>
+                    </items>
+                    <connections>
+                        <outlet property="clockInDate" destination="Tl0-Gd-QPc" id="yaM-lx-H7I"/>
+                        <outlet property="clockOutDate" destination="N0T-wS-MWX" id="VlO-LE-nl8"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="587" y="173"/>
+        </scene>
+    </scenes>
+</document>
